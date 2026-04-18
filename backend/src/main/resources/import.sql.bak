@@ -1,0 +1,5 @@
+INSERT INTO students (first_name, last_name, email, course, grade, status) VALUES ('John', 'Doe', 'john.doe@university.edu', 'Computer Science', 'A', 'active');
+INSERT INTO students (first_name, last_name, email, course, grade, status) VALUES ('Jane', 'Smith', 'jane.smith@university.edu', 'Mathematics', 'B+', 'active');
+INSERT INTO students (first_name, last_name, email, course, grade, status) VALUES ('Mike', 'Johnson', 'mike.j@university.edu', 'Physics', 'A-', 'on-leave');
+INSERT INTO students (first_name, last_name, email, course, grade, status) VALUES ('Sarah', 'Williams', 'sarah.w@university.edu', 'Biology', 'B', 'graduated');
+INSERT INTO students (first_name, last_name, email, course, grade, status) VALUES ('Robert', 'Brown', 'robert.b@university.edu', 'Chemistry', 'C+', 'active');

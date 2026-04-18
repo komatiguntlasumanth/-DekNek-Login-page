@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>frontend</title>
+    <script>
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        document.body.innerHTML = '<div style="color:white; padding: 20px; background: red;">' +
+          '<h3>Runtime Error Detected:</h3>' +
+          '<p>' + msg + '</p>' +
+          '<p>Location: ' + url + ':' + lineNo + '</p>' +
+          '</div>';
+        return false;
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.jsx"></script>
+  </body>
+</html>
