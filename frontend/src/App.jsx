@@ -3,9 +3,15 @@ import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 
-function App() {
-  const isAuthenticated = () => !!localStorage.getItem('token');
+const ProtectedRoute = ({ children }) => {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    return <Navigate to="/login" replace />;
+  }
+  return children;
+};
 
+function App() {
   return (
     <Router>
       <Routes>
@@ -13,9 +19,13 @@ function App() {
         <Route path="/signup" element={<Auth mode="signup" />} />
         <Route 
           path="/dashboard" 
-          element={isAuthenticated() ? <Dashboard /> : <Navigate to="/login" />} 
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } 
         />
-        <Route path="/" element={<Navigate to="/dashboard" />} />
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </Router>
   );
