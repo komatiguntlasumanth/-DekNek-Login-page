@@ -93,7 +93,6 @@ const Dashboard = () => {
     { label: 'Current Exact GPA', value: calculateGPA(), icon: <Award size={20}/>, color: '#3B82F6' },
     { label: 'Enrolled Courses', value: courses.length, icon: <BookOpen size={20}/>, color: '#8B5CF6' },
     { label: 'Credits Earned', value: courses.length * 3, icon: <Target size={20}/>, color: '#10B981' },
-    { label: 'Upcoming Exams', value: 2, icon: <Calendar size={20}/>, color: '#F59E0B' },
   ];
 
   return (
