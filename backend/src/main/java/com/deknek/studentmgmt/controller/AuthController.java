@@ -36,19 +36,21 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthRequest authenticationRequest) throws Exception {
+        String email = authenticationRequest.getEmail().toLowerCase();
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                authenticationRequest.getEmail(), authenticationRequest.getPassword()));
+                email, authenticationRequest.getPassword()));
 
-        final String token = jwtTokenUtil.generateToken(userDetailsService.loadUserByUsername(authenticationRequest.getEmail()));
+        final String token = jwtTokenUtil.generateToken(userDetailsService.loadUserByUsername(email));
         
-        User user = userRepository.findByEmail(authenticationRequest.getEmail()).get();
+        User user = userRepository.findByEmail(email).get();
 
         return ResponseEntity.ok(new AuthResponse(token, user.getUsername(), user.getRole()));
     }
 
     @PostMapping("/signup")
     public ResponseEntity<?> saveUser(@RequestBody AuthRequest userDto) {
-        if (userRepository.findByEmail(userDto.getEmail()).isPresent()) {
+        String email = userDto.getEmail().toLowerCase();
+        if (userRepository.findByEmail(email).isPresent()) {
             return ResponseEntity.badRequest().body("Email already exists");
         }
         if (userRepository.findByUsername(userDto.getUsername()).isPresent()) {
@@ -57,7 +59,7 @@ public class AuthController {
         
         User newUser = new User();
         newUser.setUsername(userDto.getUsername());
-        newUser.setEmail(userDto.getEmail());
+        newUser.setEmail(email);
         newUser.setPassword(passwordEncoder.encode(userDto.getPassword()));
         newUser.setRole("ROLE_USER");
         
