@@ -121,11 +121,25 @@ const Auth = ({ mode }) => {
         gap: '32px'
       }}>
         <div style={{ textAlign: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '16px' }}>
-            <div style={{ padding: '8px', background: 'var(--primary)', borderRadius: '10px', color: 'white' }}>
-              <Rocket size={24} />
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '20px' }}>
+            <div style={{ 
+              padding: '12px', 
+              background: 'linear-gradient(135deg, var(--primary), #8B5CF6)', 
+              borderRadius: '12px', 
+              color: 'white',
+              boxShadow: '0 8px 16px -4px rgba(59, 130, 246, 0.5)'
+            }}>
+              <Rocket size={28} />
             </div>
-            <span style={{ fontSize: '1.25rem', fontWeight: '800', letterSpacing: '-0.025em', color: 'var(--text)' }}>ALPHA PORTAL</span>
+            <span style={{ 
+              fontSize: '1.75rem', 
+              fontWeight: '900', 
+              letterSpacing: '-0.04em', 
+              color: 'var(--text)',
+              background: 'linear-gradient(to right, var(--text), var(--primary))',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}>ALPHA PORTAL</span>
           </div>
           <h1 style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '8px', color: 'var(--primary)' }}>
             {mode === 'login' ? 'Welcome Back' : 'Get Started'}
