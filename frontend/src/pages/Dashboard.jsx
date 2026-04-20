@@ -101,10 +101,11 @@ const Dashboard = () => {
       {/* Header */}
       <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }} className="animate-fade-in">
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-          <div style={{ width: '60px', height: '60px', borderRadius: '15px', background: 'linear-gradient(135deg, var(--primary), #8B5CF6)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>
-            {username[0]?.toUpperCase()}
+          <div style={{ width: '60px', height: '60px', borderRadius: '15px', background: 'linear-gradient(135deg, var(--primary), #8B5CF6)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
+            <Rocket size={32} />
           </div>
           <div>
+            <p style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--primary)', letterSpacing: '0.1em', marginBottom: '4px' }}>ALPHA PORTAL</p>
             <h1 style={{ fontSize: '2rem', fontWeight: '700' }}>{username}'s Dashboard</h1>
             <p style={{ color: 'var(--text-secondary)' }}>Computer Science • Sophomore Year</p>
           </div>

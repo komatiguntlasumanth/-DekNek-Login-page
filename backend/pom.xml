@@ -11,8 +11,8 @@
 	<groupId>com.deknek</groupId>
 	<artifactId>studentmgmt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>studentmgmt</name>
-	<description>Student Management System</description>
+	<name>Alpha Portal</name>
+	<description>Alpha Portal - Student Management System</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>

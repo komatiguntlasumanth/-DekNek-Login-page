@@ -1,4 +1,4 @@
-# Student Management System - Full Stack Java
+# Alpha Portal - Student Management System
 
 A premium, modern Student Management Dashboard built for the DekNek Round 2 Assignment.
 

@@ -121,6 +121,12 @@ const Auth = ({ mode }) => {
         gap: '32px'
       }}>
         <div style={{ textAlign: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '16px' }}>
+            <div style={{ padding: '8px', background: 'var(--primary)', borderRadius: '10px', color: 'white' }}>
+              <Rocket size={24} />
+            </div>
+            <span style={{ fontSize: '1.25rem', fontWeight: '800', letterSpacing: '-0.025em', color: 'var(--text)' }}>ALPHA PORTAL</span>
+          </div>
           <h1 style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '8px', color: 'var(--primary)' }}>
             {mode === 'login' ? 'Welcome Back' : 'Get Started'}
           </h1>
