@@ -3,7 +3,8 @@ import { getStudents, deleteStudent, createStudent } from '../api';
 import { useNavigate } from 'react-router-dom';
 import { 
   BookOpen, LogOut, Search, Award, 
-  Clock, Calendar, BookMarked, Target, Rocket
+  Clock, Calendar, BookMarked, Target, Rocket,
+  GraduationCap
 } from 'lucide-react';
 
 const Dashboard = () => {
