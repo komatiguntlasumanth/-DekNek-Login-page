@@ -30,7 +30,7 @@ function App() {
     // Hide splash screen after the CSS animations finish (3.2s + small buffer)
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 4000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 

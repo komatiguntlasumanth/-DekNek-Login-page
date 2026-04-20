@@ -107,7 +107,6 @@ const Dashboard = () => {
           <div>
             <p style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--primary)', letterSpacing: '0.1em', marginBottom: '4px' }}>ALPHA PORTAL</p>
             <h1 style={{ fontSize: '2rem', fontWeight: '700' }}>{username}'s Dashboard</h1>
-            <p style={{ color: 'var(--text-secondary)' }}>Computer Science • Sophomore Year</p>
           </div>
         </div>
         <div style={{ display: 'flex', gap: '16px' }}>
