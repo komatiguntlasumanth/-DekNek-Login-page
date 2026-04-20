@@ -135,8 +135,8 @@ const Auth = ({ mode }) => {
               fontSize: '1.75rem', 
               fontWeight: '900', 
               letterSpacing: '-0.04em', 
-              color: 'var(--text)',
-              background: 'linear-gradient(to right, var(--text), var(--primary))',
+              color: 'var(--text-primary)',
+              background: 'linear-gradient(to right, var(--text-primary), var(--primary))',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>ALPHA PORTAL</span>
