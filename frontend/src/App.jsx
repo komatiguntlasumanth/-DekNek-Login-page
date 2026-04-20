@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
-import { Rocket } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('token');
@@ -16,7 +16,7 @@ const Splash = () => (
   <div className="splash-screen">
     <div className="splash-content">
       <div className="splash-logo">
-        <Rocket size={64} />
+        <GraduationCap size={64} />
       </div>
       <h1 className="splash-title">ALPHA PORTAL</h1>
     </div>

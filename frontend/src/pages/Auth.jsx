@@ -129,7 +129,7 @@ const Auth = ({ mode }) => {
               color: 'white',
               boxShadow: '0 8px 16px -4px rgba(59, 130, 246, 0.5)'
             }}>
-              <Rocket size={28} />
+              <GraduationCap size={28} />
             </div>
             <span style={{ 
               fontSize: '1.75rem', 
