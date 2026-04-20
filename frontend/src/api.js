@@ -8,7 +8,14 @@ export const login = async (email, password) => {
   });
   if (!response.ok) {
     const errorText = await response.text();
-    throw new Error(errorText || 'Invalid credentials');
+    let errorMessage = errorText || 'Invalid credentials';
+    try {
+      const errorJson = JSON.parse(errorText);
+      errorMessage = errorJson.message || errorJson.error || errorMessage;
+    } catch (e) {
+      // Not JSON, use raw text
+    }
+    throw new Error(errorMessage);
   }
   return response.json();
 };
