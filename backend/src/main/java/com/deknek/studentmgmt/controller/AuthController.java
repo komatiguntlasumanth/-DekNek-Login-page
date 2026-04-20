@@ -35,13 +35,25 @@ public class AuthController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping("/login")
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthRequest authenticationRequest) throws Exception {
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthRequest authenticationRequest) {
         String email = authenticationRequest.getEmail().toLowerCase();
-        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                email, authenticationRequest.getPassword()));
+        
+        // 1. Check if user exists
+        if (!userRepository.findByEmail(email).isPresent()) {
+            return ResponseEntity.status(404).body("This email ID is not Matching, Please Sign Up to Proceed.");
+        }
+
+        try {
+            // 2. Attempt authentication (checks password)
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+                    email, authenticationRequest.getPassword()));
+        } catch (org.springframework.security.core.AuthenticationException e) {
+            return ResponseEntity.status(401).body("Entered Wrong Password.");
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Authentication service error");
+        }
 
         final String token = jwtTokenUtil.generateToken(userDetailsService.loadUserByUsername(email));
-        
         User user = userRepository.findByEmail(email).get();
 
         return ResponseEntity.ok(new AuthResponse(token, user.getUsername(), user.getRole()));
